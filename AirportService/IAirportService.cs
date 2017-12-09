@@ -11,15 +11,13 @@ namespace AirportService
     [ServiceContract]
     public interface IAirportService
     {
-
         [OperationContract]
         Plane GetPlane();
-
 
         [OperationContract]
         Flight GetFlight();
 
         [OperationContract]
-        void UpdateDataBase()
+        void UpdateDataBase();
     }
 }
