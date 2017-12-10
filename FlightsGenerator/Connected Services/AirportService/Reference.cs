@@ -52,7 +52,7 @@ namespace FlightsGenerator.AirportService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> AircraftField;
+        private FlightsGenerator.AirportService.Plane[] AircraftField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -65,7 +65,7 @@ namespace FlightsGenerator.AirportService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> Aircraft {
+        public FlightsGenerator.AirportService.Plane[] Aircraft {
             get {
                 return this.AircraftField;
             }
@@ -97,7 +97,7 @@ namespace FlightsGenerator.AirportService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AvialableField;
+        private bool AvailableField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlightsGenerator.AirportService.Flow FlowField;
@@ -119,14 +119,14 @@ namespace FlightsGenerator.AirportService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Avialable {
+        public bool Available {
             get {
-                return this.AvialableField;
+                return this.AvailableField;
             }
             set {
-                if ((this.AvialableField.Equals(value) != true)) {
-                    this.AvialableField = value;
-                    this.RaisePropertyChanged("Avialable");
+                if ((this.AvailableField.Equals(value) != true)) {
+                    this.AvailableField = value;
+                    this.RaisePropertyChanged("Available");
                 }
             }
         }

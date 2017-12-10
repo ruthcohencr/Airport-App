@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportSelfHost", "AirportSelfHost\AirportSelfHost.csproj", "{B6042D9F-CFA8-4D7F-A485-4062C5597697}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightsGenerator", "FlightsGenerator\FlightsGenerator.csproj", "{B4898F9F-D846-4049-B87A-9DC467C73E30}"
+	ProjectSection(ProjectDependencies) = postProject
+		{486463BB-2F2D-41A8-A650-AD3DB199A018} = {486463BB-2F2D-41A8-A650-AD3DB199A018}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

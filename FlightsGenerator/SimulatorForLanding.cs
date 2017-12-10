@@ -42,7 +42,7 @@ namespace FlightsGenerator
         {
             Timer timer = (Timer)sender;
             timer.Stop();
-            //_controlTower.FlightsAskToLand(flightNumber);
+            _controlTower.FlightsAskToLand(flightNumber);
 
             //in the meen time
             Console.WriteLine($"flight number {flightNumber} ask to land");

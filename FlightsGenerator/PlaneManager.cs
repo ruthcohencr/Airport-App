@@ -25,7 +25,7 @@ namespace FlightsGenerator
             {
                 Plane plane = new Plane()
                 { Flow = Flow.LandStatus,
-                    Avialable = true,
+                    Available = true,
                     PlaneID = ++counter,
                     PassengersState =PassengersState.Full
                 };
@@ -36,7 +36,7 @@ namespace FlightsGenerator
             {
                 Plane plane = new Plane()
                 { Flow = Flow.TakeoffStatus,
-                    Avialable = true,
+                    Available = true,
                     PlaneID = ++counter,
                     PassengersState = PassengersState.Empty
                 };
@@ -47,10 +47,10 @@ namespace FlightsGenerator
         public Plane GetPlaneForLanding()
         {
             Plane plane;
-            plane = Aircraft.FirstOrDefault(p => p.Avialable && p.Flow == Flow.LandStatus);
+            plane = Aircraft.FirstOrDefault(p => p.Available && p.Flow == Flow.LandStatus);
             if (plane != null)
             {
-                plane.Avialable = false;
+                plane.Available = false;
                 plane.PassengersState = PassengersState.Full;
             }
             return plane;
@@ -59,10 +59,10 @@ namespace FlightsGenerator
         public Plane GetPlaneForTakingOff()
         {
             Plane plane;
-            plane = Aircraft.FirstOrDefault(p => p.Avialable && p.Flow == Flow.TakeoffStatus);
+            plane = Aircraft.FirstOrDefault(p => p.Available && p.Flow == Flow.TakeoffStatus);
             if (plane != null)
             {
-                plane.Avialable = false;
+                plane.Available = false;
                 plane.PassengersState = PassengersState.Empty;
             }
             return plane;

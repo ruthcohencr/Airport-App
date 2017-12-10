@@ -17,10 +17,10 @@ namespace FlightsGenerator
             SimulatorForLanding simulatorForLanding = new SimulatorForLanding(planeManager, tower);
             SimulatorForDepartures simulatorForDepartures = new SimulatorForDepartures(planeManager, tower);
 
-            simulatorForLanding.GenerateLandingFlights();
-            simulatorForDepartures.GenerateTakeoffFlights();
+            //simulatorForLanding.GenerateLandingFlights();
+            //simulatorForDepartures.GenerateTakeoffFlights();
 
-            //Task.Run(() => GenerateFlights(simulatorForLanding, simulatorForDepartures));
+            Task.Run(() => GenerateFlights(simulatorForLanding, simulatorForDepartures));
 
             Console.ReadLine();
         }

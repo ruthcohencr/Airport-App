@@ -56,6 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirportService.cs" />
+    <Compile Include="Connected Services\AirportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="IAirportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +68,20 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\AirportService\AirportEntities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AirportService\service.wsdl" />
+    <None Include="Connected Services\AirportService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AirportService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\AirportEntities.ControlTower.datasource" />
+    <None Include="Properties\DataSources\AirportEntities.Flight.datasource" />
+    <None Include="Properties\DataSources\AirportEntities.Plane.datasource" />
+    <None Include="Properties\DataSources\AirportEntities.PlaneManager.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AirportData\AirportData.csproj">
@@ -73,6 +92,24 @@
       <Project>{5CBE91BB-3A5B-4BD7-B1DE-52889E2FFC93}</Project>
       <Name>AirportEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AirportService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AirportService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AirportService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AirportService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
