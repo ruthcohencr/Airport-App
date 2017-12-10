@@ -1,17 +1,16 @@
-﻿using System;
+﻿using FlightsGenerator.AirportService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirportEntities
+namespace FlightsGenerator
 {
-    [DataContract]
-    public class PlaneManager
+    class PlaneManager
     {
-        [DataMember]
         public List<Plane> Aircraft { get; set; }
+        private int counter = 0;
 
         public PlaneManager()
         {
@@ -24,13 +23,23 @@ namespace AirportEntities
 
             for (int i = 0; i < 10; i++)
             {
-                Plane plane = new Plane(Flow.LandStatus);
+                Plane plane = new Plane()
+                { Flow = Flow.LandStatus,
+                    Avialable = true,
+                    PlaneID = ++counter,
+                    PassengersState =PassengersState.Full
+                };
                 Aircraft.Add(plane);
             }
 
             for (int i = 0; i < 10; i++)
             {
-                Plane plane = new Plane(Flow.TakeoffStatus);
+                Plane plane = new Plane()
+                { Flow = Flow.TakeoffStatus,
+                    Avialable = true,
+                    PlaneID = ++counter,
+                    PassengersState = PassengersState.Empty
+                };
                 Aircraft.Add(plane);
             }
         }
@@ -38,10 +47,10 @@ namespace AirportEntities
         public Plane GetPlaneForLanding()
         {
             Plane plane;
-            plane = Aircraft.FirstOrDefault(p => p.Available && p.Flow == Flow.LandStatus);
+            plane = Aircraft.FirstOrDefault(p => p.Avialable && p.Flow == Flow.LandStatus);
             if (plane != null)
             {
-                plane.Available = false;
+                plane.Avialable = false;
                 plane.PassengersState = PassengersState.Full;
             }
             return plane;
@@ -50,14 +59,13 @@ namespace AirportEntities
         public Plane GetPlaneForTakingOff()
         {
             Plane plane;
-            plane = Aircraft.FirstOrDefault(p => p.Available && p.Flow == Flow.TakeoffStatus);
+            plane = Aircraft.FirstOrDefault(p => p.Avialable && p.Flow == Flow.TakeoffStatus);
             if (plane != null)
             {
-                plane.Available = false;
+                plane.Avialable = false;
                 plane.PassengersState = PassengersState.Empty;
             }
             return plane;
-
         }
     }
 }

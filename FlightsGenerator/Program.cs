@@ -10,6 +10,27 @@ namespace FlightsGenerator
     {
         static void Main(string[] args)
         {
+            AirportService.AirportServiceClient client = new AirportService.AirportServiceClient();
+            AirportService.ControlTower tower = new AirportService.ControlTower();
+            PlaneManager planeManager = new PlaneManager();
+
+            SimulatorForLanding simulatorForLanding = new SimulatorForLanding(planeManager, tower);
+            SimulatorForDepartures simulatorForDepartures = new SimulatorForDepartures(planeManager, tower);
+
+            simulatorForLanding.GenerateLandingFlights();
+            simulatorForDepartures.GenerateTakeoffFlights();
+
+            //Task.Run(() => GenerateFlights(simulatorForLanding, simulatorForDepartures));
+
+            Console.ReadLine();
+        }
+
+        private async static Task GenerateFlights(SimulatorForLanding sForLanding, SimulatorForDepartures sForDepartures)
+        {
+            await Task.Run(async () => { await sForLanding.GenerateLandingFlights(); });
+            await Task.Run(async () => { await sForDepartures.GenerateTakeoffFlights(); });
+        }
+
+
         }
     }
-}

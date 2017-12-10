@@ -21,7 +21,7 @@ namespace AirportEntities
     [DataContract]
     public class Plane
     {
-        private static int counter = 0;
+        //private static int counter = 0;
         private int _planeID;
 
         [DataMember]
@@ -47,21 +47,31 @@ namespace AirportEntities
         private bool _available;
 
         [DataMember]
-        public bool Avialable
+        public bool Available
         {
             get { return _available; }
             set { _available = value; }
         }
         private Object obj = new object();
 
-        public Plane() { }
+        public Plane()
+        {
+            SetPlane();
+        }
+
         public Plane(Flow flow)
         {
-            _planeID = ++counter;
-
             PassengersState = PassengersState.Full;
-            _flow = flow;
-            _available = true;
+            Flow = flow;
+            SetPlane();
+            //_planeID = ++counter;
+            //_available = true;
+        }
+
+        private void SetPlane()
+        {
+            //PlaneID = ++counter;
+            Available = true;
         }
     }
 }
