@@ -16,7 +16,7 @@ namespace AirportService
 
         public Flight GetFlight()
         {
-            throw new NotImplementedException();
+            return new Flight();
         }
 
         [OperationBehavior(TransactionScopeRequired =true)]
@@ -26,7 +26,7 @@ namespace AirportService
         }
         public Plane GetPlane()
         {
-            throw new NotImplementedException();
+            return new Plane();
         }
 
         public void Dispose()
@@ -38,6 +38,16 @@ namespace AirportService
         public string GetValue()
         {
             return ($" Hello from server... ");
+        }
+
+        public ControlTower GetControlTower()
+        {
+            return new ControlTower();
+        }
+
+        public PlaneManager GetPlaneManager()
+        {
+            return new PlaneManager();
         }
     }
 }

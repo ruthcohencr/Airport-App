@@ -12,6 +12,12 @@ namespace AirportService
     public interface IAirportService
     {
         [OperationContract]
+        ControlTower GetControlTower();
+
+        [OperationContract]
+        PlaneManager GetPlaneManager();
+
+        [OperationContract]
         Plane GetPlane();
 
         [OperationContract]

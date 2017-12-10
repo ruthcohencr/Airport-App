@@ -54,7 +54,7 @@ namespace AirportEntities
         }
         private Object obj = new object();
 
-
+        public Plane() { }
         public Plane(Flow flow)
         {
             _planeID = ++counter;

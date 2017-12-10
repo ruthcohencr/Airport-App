@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AirportEntities
 {
     [DataContract]
-    class PlaneManager
+    public class PlaneManager
     {
         [DataMember]
         public List<Plane> Aircraft { get; set; }
