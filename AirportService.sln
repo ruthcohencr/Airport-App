@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportEntities", "AirportE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportData", "AirportData\AirportData.csproj", "{C9619788-96E4-44BF-AA22-82A08BEAFD4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportSelfHost", "AirportSelfHost\AirportSelfHost.csproj", "{B6042D9F-CFA8-4D7F-A485-4062C5597697}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C9619788-96E4-44BF-AA22-82A08BEAFD4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9619788-96E4-44BF-AA22-82A08BEAFD4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9619788-96E4-44BF-AA22-82A08BEAFD4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6042D9F-CFA8-4D7F-A485-4062C5597697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6042D9F-CFA8-4D7F-A485-4062C5597697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6042D9F-CFA8-4D7F-A485-4062C5597697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6042D9F-CFA8-4D7F-A485-4062C5597697}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

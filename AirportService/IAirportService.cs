@@ -19,5 +19,8 @@ namespace AirportService
 
         [OperationContract]
         void UpdateDataBase();
+
+        [OperationContract]
+        string GetValue();
     }
 }

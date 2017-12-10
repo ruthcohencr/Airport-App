@@ -34,5 +34,10 @@ namespace AirportService
             //_context.Dispose();
             throw new NotImplementedException();
         }
+
+        public string GetValue()
+        {
+            return ($" Hello from server... ");
+        }
     }
 }
