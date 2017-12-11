@@ -14,11 +14,16 @@ namespace FlightsGenerator
         private PlaneManager _planeManager;
         private Random generateMinutes;
         private AirportService.ControlTower _controlTower;
-        public SimulatorForDepartures(PlaneManager planeManager, AirportService.ControlTower tower)
+        private AirportService.AirportServiceClient _client;
+
+        public SimulatorForDepartures(PlaneManager planeManager, 
+                                      AirportService.ControlTower tower,
+                                      AirportService.AirportServiceClient client)
         {
             _planeManager = planeManager;
             generateMinutes = new Random(50);
             _controlTower = tower;
+            _client = client;
         }
 
         public async Task GenerateTakeoffFlights()
@@ -42,9 +47,10 @@ namespace FlightsGenerator
         {
             Timer timer = (Timer)sender;
             timer.Stop();
-            _controlTower.FlightsAskToTakeoff(flightNumber);
+            //_controlTower.FlightsAskToTakeoff(flightNumber);
 
-            Console.WriteLine($"flight number {flightNumber} ask to takeoff");
+            _client.FlightAskToTakeoff(flightNumber);
+            //Console.WriteLine($"flight number {flightNumber} ask to takeoff");
         }
     }
 }

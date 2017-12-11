@@ -14,12 +14,16 @@ namespace FlightsGenerator
         private PlaneManager _planeManager;
         private Random generateMinutes;
         private AirportService.ControlTower _controlTower;
+        private AirportService.AirportServiceClient _client;
+
         public SimulatorForLanding(PlaneManager planeManager,
-            AirportService.ControlTower tower)
+            AirportService.ControlTower tower,
+            AirportService.AirportServiceClient client)
         {
             _planeManager = planeManager;
             generateMinutes = new Random(50);
             _controlTower = tower;
+            _client = client;
         }
 
         public async Task GenerateLandingFlights()
@@ -42,10 +46,12 @@ namespace FlightsGenerator
         {
             Timer timer = (Timer)sender;
             timer.Stop();
-            _controlTower.FlightsAskToLand(flightNumber);
+            //_controlTower.FlightsAskToLand(flightNumber);
+
+            _client.FlightAskToLand(flightNumber);
 
             //in the meen time
-            Console.WriteLine($"flight number {flightNumber} ask to land");
+            //Console.WriteLine($"flight number {flightNumber} ask to land");
         }
     }
 }

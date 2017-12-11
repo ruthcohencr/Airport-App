@@ -11,11 +11,12 @@ namespace FlightsGenerator
         static void Main(string[] args)
         {
             AirportService.AirportServiceClient client = new AirportService.AirportServiceClient();
+            Console.WriteLine(client.GetValue() );
             AirportService.ControlTower tower = new AirportService.ControlTower();
             PlaneManager planeManager = new PlaneManager();
 
-            SimulatorForLanding simulatorForLanding = new SimulatorForLanding(planeManager, tower);
-            SimulatorForDepartures simulatorForDepartures = new SimulatorForDepartures(planeManager, tower);
+            SimulatorForLanding simulatorForLanding = new SimulatorForLanding(planeManager, tower,client);
+            SimulatorForDepartures simulatorForDepartures = new SimulatorForDepartures(planeManager, tower,client);
 
             //simulatorForLanding.GenerateLandingFlights();
             //simulatorForDepartures.GenerateTakeoffFlights();

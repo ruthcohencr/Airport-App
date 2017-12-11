@@ -5,7 +5,6 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using AirportService;
 
 namespace AirportSelfHost
 {
@@ -13,17 +12,12 @@ namespace AirportSelfHost
     {
         static void Main(string[] args)
         {
-            try
+            using (ServiceHost host = new ServiceHost(typeof(AirportService.AirportService)))
             {
-                ServiceHost host = new ServiceHost(typeof(AirportService.AirportService));
                 host.Open();
-                Console.WriteLine("Sever is open in http://localhost/2112 \npress any key to exit...");
+                Console.WriteLine("Sever is open at http://localhost:8080 \npress any key to exit...");
                 Console.ReadKey();
                 host.Close();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
             }
         }
     }

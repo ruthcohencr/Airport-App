@@ -49,5 +49,17 @@ namespace AirportService
         {
             return new PlaneManager();
         }
+
+        public void FlightAskToLand(int flightNumber)
+        {
+            ControlTower tower = new ControlTower();
+            tower.FlightsAskToLand(flightNumber);
+        }
+
+        public void FlightAskToTakeoff(int flightNumber)
+        {
+            ControlTower tower = new ControlTower();
+            tower.FlightsAskToTakeoff(flightNumber);
+        }
     }
 }

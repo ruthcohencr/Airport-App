@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bfbc52d6-2854-44b6-928b-ea9125c200d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="344ff2a1-bde4-4c5b-950e-f6bc6ffea116" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -9,7 +9,9 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
@@ -19,14 +21,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:2112" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="be74de11-c1ea-4b63-8b9e-e833dda74e8b" SourceId="1" SourceUrl="http://localhost:2112/?disco" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="829a2f8f-d48f-4ee4-a52c-81f713a2732d" SourceId="1" SourceUrl="http://localhost:2112/?xsd=xsd1" />
-    <MetadataFile FileName="AirportService.wsdl" MetadataType="Wsdl" ID="2c388191-929e-42e5-8c5f-9c58142b855b" SourceId="1" SourceUrl="http://localhost:2112/?wsdl" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="7bf5937c-32dd-4025-b796-c128860fed5b" SourceId="1" SourceUrl="http://localhost:2112/?xsd=xsd2" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="9965a5fc-5847-4c42-b8a7-03f1a8073dcc" SourceId="1" SourceUrl="http://localhost:2112/?xsd=xsd0" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="eab81ee2-af63-4787-bd65-d4560cfc09d8" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd2" />
+    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="572c1ff2-2dcb-453b-8a2d-7e3b176ad3b3" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
+    <MetadataFile FileName="item31.xsd" MetadataType="Schema" ID="4c22dabd-4da6-4920-a1ff-8ea01596a4af" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
+    <MetadataFile FileName="AirportService1.wsdl" MetadataType="Wsdl" ID="fcff2cec-5da2-4a11-bffc-2ae121bea420" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
+    <MetadataFile FileName="item32.xsd" MetadataType="Schema" ID="e69ad05e-9af8-46d3-aec6-3e29417b544d" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

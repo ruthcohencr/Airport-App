@@ -52,7 +52,7 @@ namespace FlightsGenerator.AirportService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlightsGenerator.AirportService.Plane[] AircraftField;
+        private System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> AircraftField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -65,7 +65,7 @@ namespace FlightsGenerator.AirportService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlightsGenerator.AirportService.Plane[] Aircraft {
+        public System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> Aircraft {
             get {
                 return this.AircraftField;
             }
@@ -283,6 +283,18 @@ namespace FlightsGenerator.AirportService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AirportService.IAirportService")]
     public interface IAirportService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToLand", ReplyAction="http://tempuri.org/IAirportService/FlightAskToLandResponse")]
+        void FlightAskToLand(int flightNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToLand", ReplyAction="http://tempuri.org/IAirportService/FlightAskToLandResponse")]
+        System.Threading.Tasks.Task FlightAskToLandAsync(int flightNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToTakeoff", ReplyAction="http://tempuri.org/IAirportService/FlightAskToTakeoffResponse")]
+        void FlightAskToTakeoff(int flightNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToTakeoff", ReplyAction="http://tempuri.org/IAirportService/FlightAskToTakeoffResponse")]
+        System.Threading.Tasks.Task FlightAskToTakeoffAsync(int flightNumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/GetControlTower", ReplyAction="http://tempuri.org/IAirportService/GetControlTowerResponse")]
         FlightsGenerator.AirportService.ControlTower GetControlTower();
         
@@ -345,6 +357,22 @@ namespace FlightsGenerator.AirportService {
         
         public AirportServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void FlightAskToLand(int flightNumber) {
+            base.Channel.FlightAskToLand(flightNumber);
+        }
+        
+        public System.Threading.Tasks.Task FlightAskToLandAsync(int flightNumber) {
+            return base.Channel.FlightAskToLandAsync(flightNumber);
+        }
+        
+        public void FlightAskToTakeoff(int flightNumber) {
+            base.Channel.FlightAskToTakeoff(flightNumber);
+        }
+        
+        public System.Threading.Tasks.Task FlightAskToTakeoffAsync(int flightNumber) {
+            return base.Channel.FlightAskToTakeoffAsync(flightNumber);
         }
         
         public FlightsGenerator.AirportService.ControlTower GetControlTower() {

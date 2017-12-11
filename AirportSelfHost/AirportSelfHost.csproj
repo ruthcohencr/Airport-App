@@ -51,8 +51,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AirportService\AirportService.csproj">
-      <Project>{486463bb-2f2d-41a8-a650-ad3db199a018}</Project>
+    <ProjectReference Include="..\AirportService2\AirportService.csproj">
+      <Project>{acf07b46-fe62-4037-98a3-adc21dd91fcb}</Project>
       <Name>AirportService</Name>
     </ProjectReference>
   </ItemGroup>

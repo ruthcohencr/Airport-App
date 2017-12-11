@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Ru+qU2w6xm4wS5ZXlBc6b1DXzk8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SUG31KZP+pYEw/OBROPlvZGm6n8=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IAirportService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IAirportService" contract="AirportService.IAirportService" bindingType="basicHttpBinding" address="http://localhost:2112/AirportService.AirportService" bindingConfiguration="BasicHttpBinding_IAirportService">
+    <endpoint name="BasicHttpBinding_IAirportService" contract="AirportService.IAirportService" bindingType="basicHttpBinding" address="http://localhost:8080/AirportService.AirportService" bindingConfiguration="BasicHttpBinding_IAirportService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:2112/AirportService.AirportService</serializedValue>
+          <serializedValue>http://localhost:8080/AirportService.AirportService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
