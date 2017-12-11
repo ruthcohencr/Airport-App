@@ -12,6 +12,12 @@ namespace AirportService
     public interface IAirportService
     {
         [OperationContract]
+        void FlightAskToLand(int flightNumber);
+
+        [OperationContract]
+        void FlightAskToTakeoff(int flightNumber);
+
+        [OperationContract]
         ControlTower GetControlTower();
 
         [OperationContract]

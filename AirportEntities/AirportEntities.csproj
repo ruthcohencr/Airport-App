@@ -44,6 +44,13 @@
   <ItemGroup>
     <Compile Include="ControlTower.cs" />
     <Compile Include="Flight.cs" />
+    <Compile Include="FlowProcess\LandingProcess.cs" />
+    <Compile Include="FlowProcess\Process.cs" />
+    <Compile Include="FlowProcess\TakingOffProcess.cs" />
+    <Compile Include="IAreaLocations\CommonArea.cs" />
+    <Compile Include="IAreaLocations\IArea.cs" />
+    <Compile Include="IAreaLocations\LandingArea.cs" />
+    <Compile Include="IAreaLocations\TakeoffArea.cs" />
     <Compile Include="Plane.cs" />
     <Compile Include="PlaneManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportSelfHost", "AirportS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightsGenerator", "FlightsGenerator\FlightsGenerator.csproj", "{B4898F9F-D846-4049-B87A-9DC467C73E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportService", "AirportService2\AirportService.csproj", "{ACF07B46-FE62-4037-98A3-ADC21DD91FCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportService", "AirportService\AirportService.csproj", "{ACF07B46-FE62-4037-98A3-ADC21DD91FCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
