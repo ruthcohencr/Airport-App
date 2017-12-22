@@ -37,18 +37,18 @@ namespace FlightsGenerator
                     int minutesToLand = generateMinutes.Next(1, 10) * DURATION;
                     Timer timer = new Timer(minutesToLand);
                     timer.Start();
-                    timer.Elapsed += (sender, e) => TimerElapsedFlightNeedsToLand(sender, e, flight.Plane.PlaneID);
+                    timer.Elapsed += (sender, e) => TimerElapsedFlightNeedsToLand(sender, e, flight);
                 }
             }
         }
 
-        private void TimerElapsedFlightNeedsToLand(object sender, ElapsedEventArgs e, int flightNumber)
+        private void TimerElapsedFlightNeedsToLand(object sender, ElapsedEventArgs e, AirportService.Flight flight)
         {
             Timer timer = (Timer)sender;
             timer.Stop();
             //_controlTower.FlightsAskToLand(flightNumber);
 
-            _client.FlightAskToLand(flightNumber);
+            _client.FlightAskToLand(flight);
 
             //in the meen time
             //Console.WriteLine($"flight number {flightNumber} ask to land");

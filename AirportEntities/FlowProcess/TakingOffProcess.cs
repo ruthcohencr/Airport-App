@@ -11,8 +11,8 @@ namespace AirportEntities.FlowProcess
     {
         public override List<IArea> CreateProcessFlow()
         {
-            IArea area4 = new CommonArea(4);
             IArea area8 = new TakeoffArea(8);
+            IArea area4 = new CommonArea(4);
             IArea area9 = new TakeoffArea(9);
 
             ListOfAreas.Add(area8);

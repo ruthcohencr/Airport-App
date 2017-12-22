@@ -4,7 +4,7 @@
   <xs:element name="FlightAskToLand">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="flightNumber" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="flightNumber" nillable="true" type="q1:Flight" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -16,7 +16,7 @@
   <xs:element name="FlightAskToTakeoff">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="flightNumber" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="flightNumber" nillable="true" type="q2:Flight" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -33,7 +33,7 @@
   <xs:element name="GetControlTowerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetControlTowerResult" nillable="true" type="q1:ControlTower" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetControlTowerResult" nillable="true" type="q3:ControlTower" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +45,7 @@
   <xs:element name="GetPlaneManagerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetPlaneManagerResult" nillable="true" type="q2:PlaneManager" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetPlaneManagerResult" nillable="true" type="q4:PlaneManager" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -57,7 +57,7 @@
   <xs:element name="GetPlaneResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetPlaneResult" nillable="true" type="q3:Plane" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetPlaneResult" nillable="true" type="q5:Plane" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -69,7 +69,7 @@
   <xs:element name="GetFlightResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetFlightResult" nillable="true" type="q4:Flight" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AirportEntities" minOccurs="0" name="GetFlightResult" nillable="true" type="q6:Flight" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -17,6 +17,7 @@ namespace AirportEntities
         public int FlightNumber
         {
             get { return _flightNumber; }
+            set { _flightNumber = value; }
         }
 
         [DataMember]
@@ -30,11 +31,12 @@ namespace AirportEntities
         public Flight()
         {
             Plane = null;
+            _flightNumber = ++flightCounter;
         }
 
         public Flight(Plane plane, Flow flow)
         {
-            _flightNumber = ++flightCounter;
+            //_flightNumber = ++flightCounter;
             Plane = plane;
             Flow = flow;
         }

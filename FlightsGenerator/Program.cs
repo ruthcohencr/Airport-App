@@ -12,6 +12,8 @@ namespace FlightsGenerator
         {
             AirportService.AirportServiceClient client = new AirportService.AirportServiceClient();
             Console.WriteLine(client.GetValue() );
+
+
             AirportService.ControlTower tower = new AirportService.ControlTower();
             PlaneManager planeManager = new PlaneManager();
 

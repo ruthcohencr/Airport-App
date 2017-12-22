@@ -8,8 +8,10 @@ namespace AirportEntities.IAreaLocations
 {
     class TakeoffArea : IArea
     {
-        public int AreaNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SpendingMinutes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int AreaNumber { get; set; }
+        public int SpendingMinutes { get; set; }
+        public int FlightNumber { get; set; }
+
         public List<Plane> CurrentPlanes;
 
         public TakeoffArea(int areaNumber)

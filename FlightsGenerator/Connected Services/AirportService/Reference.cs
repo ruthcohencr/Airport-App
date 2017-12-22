@@ -15,44 +15,21 @@ namespace FlightsGenerator.AirportService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ControlTower", Namespace="http://schemas.datacontract.org/2004/07/AirportEntities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Flight", Namespace="http://schemas.datacontract.org/2004/07/AirportEntities")]
     [System.SerializableAttribute()]
-    public partial class ControlTower : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PlaneManager", Namespace="http://schemas.datacontract.org/2004/07/AirportEntities")]
-    [System.SerializableAttribute()]
-    public partial class PlaneManager : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Flight : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> AircraftField;
+        private int FlightNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlightsGenerator.AirportService.Flow FlowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlightsGenerator.AirportService.Plane PlaneField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -65,14 +42,40 @@ namespace FlightsGenerator.AirportService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> Aircraft {
+        public int FlightNumber {
             get {
-                return this.AircraftField;
+                return this.FlightNumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.AircraftField, value) != true)) {
-                    this.AircraftField = value;
-                    this.RaisePropertyChanged("Aircraft");
+                if ((this.FlightNumberField.Equals(value) != true)) {
+                    this.FlightNumberField = value;
+                    this.RaisePropertyChanged("FlightNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlightsGenerator.AirportService.Flow Flow {
+            get {
+                return this.FlowField;
+            }
+            set {
+                if ((this.FlowField.Equals(value) != true)) {
+                    this.FlowField = value;
+                    this.RaisePropertyChanged("Flow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlightsGenerator.AirportService.Plane Plane {
+            get {
+                return this.PlaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaneField, value) != true)) {
+                    this.PlaneField = value;
+                    this.RaisePropertyChanged("Plane");
                 }
             }
         }
@@ -204,21 +207,44 @@ namespace FlightsGenerator.AirportService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Flight", Namespace="http://schemas.datacontract.org/2004/07/AirportEntities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ControlTower", Namespace="http://schemas.datacontract.org/2004/07/AirportEntities")]
     [System.SerializableAttribute()]
-    public partial class Flight : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ControlTower : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PlaneManager", Namespace="http://schemas.datacontract.org/2004/07/AirportEntities")]
+    [System.SerializableAttribute()]
+    public partial class PlaneManager : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FlightNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlightsGenerator.AirportService.Flow FlowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlightsGenerator.AirportService.Plane PlaneField;
+        private System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> AircraftField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -231,40 +257,14 @@ namespace FlightsGenerator.AirportService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FlightNumber {
+        public System.Collections.Generic.List<FlightsGenerator.AirportService.Plane> Aircraft {
             get {
-                return this.FlightNumberField;
+                return this.AircraftField;
             }
             set {
-                if ((this.FlightNumberField.Equals(value) != true)) {
-                    this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlightsGenerator.AirportService.Flow Flow {
-            get {
-                return this.FlowField;
-            }
-            set {
-                if ((this.FlowField.Equals(value) != true)) {
-                    this.FlowField = value;
-                    this.RaisePropertyChanged("Flow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlightsGenerator.AirportService.Plane Plane {
-            get {
-                return this.PlaneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlaneField, value) != true)) {
-                    this.PlaneField = value;
-                    this.RaisePropertyChanged("Plane");
+                if ((object.ReferenceEquals(this.AircraftField, value) != true)) {
+                    this.AircraftField = value;
+                    this.RaisePropertyChanged("Aircraft");
                 }
             }
         }
@@ -284,16 +284,16 @@ namespace FlightsGenerator.AirportService {
     public interface IAirportService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToLand", ReplyAction="http://tempuri.org/IAirportService/FlightAskToLandResponse")]
-        void FlightAskToLand(int flightNumber);
+        void FlightAskToLand(FlightsGenerator.AirportService.Flight flightNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToLand", ReplyAction="http://tempuri.org/IAirportService/FlightAskToLandResponse")]
-        System.Threading.Tasks.Task FlightAskToLandAsync(int flightNumber);
+        System.Threading.Tasks.Task FlightAskToLandAsync(FlightsGenerator.AirportService.Flight flightNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToTakeoff", ReplyAction="http://tempuri.org/IAirportService/FlightAskToTakeoffResponse")]
-        void FlightAskToTakeoff(int flightNumber);
+        void FlightAskToTakeoff(FlightsGenerator.AirportService.Flight flightNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/FlightAskToTakeoff", ReplyAction="http://tempuri.org/IAirportService/FlightAskToTakeoffResponse")]
-        System.Threading.Tasks.Task FlightAskToTakeoffAsync(int flightNumber);
+        System.Threading.Tasks.Task FlightAskToTakeoffAsync(FlightsGenerator.AirportService.Flight flightNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportService/GetControlTower", ReplyAction="http://tempuri.org/IAirportService/GetControlTowerResponse")]
         FlightsGenerator.AirportService.ControlTower GetControlTower();
@@ -359,19 +359,19 @@ namespace FlightsGenerator.AirportService {
                 base(binding, remoteAddress) {
         }
         
-        public void FlightAskToLand(int flightNumber) {
+        public void FlightAskToLand(FlightsGenerator.AirportService.Flight flightNumber) {
             base.Channel.FlightAskToLand(flightNumber);
         }
         
-        public System.Threading.Tasks.Task FlightAskToLandAsync(int flightNumber) {
+        public System.Threading.Tasks.Task FlightAskToLandAsync(FlightsGenerator.AirportService.Flight flightNumber) {
             return base.Channel.FlightAskToLandAsync(flightNumber);
         }
         
-        public void FlightAskToTakeoff(int flightNumber) {
+        public void FlightAskToTakeoff(FlightsGenerator.AirportService.Flight flightNumber) {
             base.Channel.FlightAskToTakeoff(flightNumber);
         }
         
-        public System.Threading.Tasks.Task FlightAskToTakeoffAsync(int flightNumber) {
+        public System.Threading.Tasks.Task FlightAskToTakeoffAsync(FlightsGenerator.AirportService.Flight flightNumber) {
             return base.Channel.FlightAskToTakeoffAsync(flightNumber);
         }
         

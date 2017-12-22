@@ -21,19 +21,18 @@ namespace AirportEntities
             TakesOffFlights = new List<Flight>();
         }
 
-        public void FlightsAskToLand(int flightNumber)
+        public void FlightsAskToLand(Flight flight)
         {
-            Console.WriteLine($"Flight number {flightNumber} asking permission to land now.");
+            Console.WriteLine($"Flight number {flight.FlightNumber} asking permission to land now.");
             //land the plan...
-            Flight flight = FindFlight(flightNumber);
             CommingFlights.Add(flight);
         }
 
-        public void FlightsAskToTakeoff(int flightNumber)
+        public void FlightsAskToTakeoff(Flight flight)
         {
-            Console.WriteLine($"Flight number {flightNumber} asking permission to takeoff now.");
+            Console.WriteLine($"Flight number {flight.FlightNumber} asking permission to takeoff now.");
             //let the plan to takeoff...
-            Flight flight = FindFlight(flightNumber);
+
             CommingFlights.Add(flight);
         }
 

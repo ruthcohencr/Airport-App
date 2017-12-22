@@ -8,8 +8,8 @@ namespace AirportEntities.IAreaLocations
 {
     class CommonArea : IArea
     {
-        public int AreaNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SpendingMinutes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int AreaNumber { get; set; }
+        public int SpendingMinutes { get; set; }
         public bool IsAvailable { get; set; }
         public int FlightNumber { get; set; }
 

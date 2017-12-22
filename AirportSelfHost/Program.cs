@@ -15,7 +15,7 @@ namespace AirportSelfHost
             using (ServiceHost host = new ServiceHost(typeof(AirportService.AirportService)))
             {
                 host.Open();
-                Console.WriteLine("Sever is open at http://localhost:8080 \npress any key to exit...");
+                Console.WriteLine($"Sever is open since {DateTime.Now} at http://localhost:8080 \npress any key to exit...");
                 Console.ReadKey();
                 host.Close();
             }

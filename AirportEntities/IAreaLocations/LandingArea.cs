@@ -12,6 +12,8 @@ namespace AirportEntities.IAreaLocations
         //how to declare..?
         public int AreaNumber { get; set; }
         public int SpendingMinutes { get; set; }
+        public int FlightNumber { get; set; }
+
         public List<Plane> CurrentPlanes;
 
         public LandingArea(int areaNumber)

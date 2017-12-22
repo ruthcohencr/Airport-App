@@ -38,18 +38,18 @@ namespace FlightsGenerator
                     int minutesToTakeoff = generateMinutes.Next(1, 10) * DURATION;
                     Timer timer = new Timer(minutesToTakeoff);
                     timer.Start();
-                    timer.Elapsed += (sender, e) => TimerElapsedFlightNeedsToTakeoff(sender, e, flight.Plane.PlaneID);
+                    timer.Elapsed += (sender, e) => TimerElapsedFlightNeedsToTakeoff(sender, e, flight);
                 }
             }
         }
 
-        private void TimerElapsedFlightNeedsToTakeoff(object sender, ElapsedEventArgs e, int flightNumber)
+        private void TimerElapsedFlightNeedsToTakeoff(object sender, ElapsedEventArgs e, AirportService.Flight flight)
         {
             Timer timer = (Timer)sender;
             timer.Stop();
             //_controlTower.FlightsAskToTakeoff(flightNumber);
 
-            _client.FlightAskToTakeoff(flightNumber);
+            _client.FlightAskToTakeoff(flight);
             //Console.WriteLine($"flight number {flightNumber} ask to takeoff");
         }
     }
