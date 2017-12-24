@@ -10,7 +10,8 @@ namespace FlightsGenerator
 {
     class SimulatorForLanding
     {
-        const int DURATION = 500;
+        const int DURATION = 2000;
+        private int flightNumber = 400;
         private PlaneManager _planeManager;
         private Random generateMinutes;
         private AirportService.ControlTower _controlTower;
@@ -28,12 +29,13 @@ namespace FlightsGenerator
 
         public async Task GenerateLandingFlights()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 2; i++)
             {
                 AirportService.Plane plane = _planeManager.GetPlaneForLanding();
                 if (plane != null)
                 {
-                    AirportService.Flight flight = new AirportService.Flight() { Plane = plane, Flow = Flow.LandStatus };
+                    AirportService.Flight flight = new AirportService.Flight()
+                    { Plane = plane, Flow = Flow.LandStatus, FlightNumber = flightNumber++ };
                     int minutesToLand = generateMinutes.Next(1, 10) * DURATION;
                     Timer timer = new Timer(minutesToLand);
                     timer.Start();
@@ -52,6 +54,7 @@ namespace FlightsGenerator
 
             //in the meen time
             //Console.WriteLine($"flight number {flightNumber} ask to land");
+            //}
         }
     }
 }

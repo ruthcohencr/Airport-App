@@ -12,13 +12,11 @@ namespace AirportEntities
     //Manage each plane moving from one location to another
     class Scheduler
     {
-        private ControlTower _controlTower;
         private CommonArea _area6;
         private CommonArea _area7;
 
-        public Scheduler(ControlTower tower)
+        public Scheduler()
         {
-            _controlTower = tower;
             _area6 = new CommonArea(6);
             _area7 = new CommonArea(7);
         }
@@ -35,7 +33,7 @@ namespace AirportEntities
             }
         }
 
-        public void StartTakingoffFlowProcces(Flight flight)
+        private void StartTakingoffFlowProcces(Flight flight)
         {
             Process process = new TakingOffProcess();
             //got the list of all the flow that the flight/plane needs to know
@@ -78,7 +76,7 @@ namespace AirportEntities
             area.IsAvailable = true;
         }
 
-        public void StartLandingFlowProcces(Flight flight)
+        private void StartLandingFlowProcces(Flight flight)
         {
             Process process = new LandingProcess();
             //got the list of all the flow that the flight/plane needs to know

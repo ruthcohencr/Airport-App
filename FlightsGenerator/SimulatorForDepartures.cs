@@ -10,7 +10,8 @@ namespace FlightsGenerator
 {
     class SimulatorForDepartures
     {
-        const int DURATION = 500;
+        const int DURATION = 2000;
+        private int flightNumber = 700;
         private PlaneManager _planeManager;
         private Random generateMinutes;
         private AirportService.ControlTower _controlTower;
@@ -28,13 +29,14 @@ namespace FlightsGenerator
 
         public async Task GenerateTakeoffFlights()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 2; i++)
             {
                 FlightsGenerator.AirportService.Plane
                  plane = _planeManager.GetPlaneForTakingOff();
                 if (plane != null)
                 {
-                    AirportService.Flight flight = new AirportService.Flight() { Plane = plane, Flow = AirportService.Flow.LandStatus };
+                    AirportService.Flight flight = new AirportService.Flight()
+                    { Plane = plane, Flow = AirportService.Flow.LandStatus, FlightNumber = flightNumber++ };
                     int minutesToTakeoff = generateMinutes.Next(1, 10) * DURATION;
                     Timer timer = new Timer(minutesToTakeoff);
                     timer.Start();

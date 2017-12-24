@@ -11,14 +11,15 @@ namespace AirportEntities
     [DataContract]
     public class ControlTower
     {
-
         public List<Flight> CommingFlights;
         public List<Flight> TakesOffFlights;
+        private Scheduler _scheduler;
 
         public ControlTower()
         {
             CommingFlights = new List<Flight>();
             TakesOffFlights = new List<Flight>();
+            _scheduler = new Scheduler();
         }
 
         public void FlightsAskToLand(Flight flight)
@@ -26,6 +27,7 @@ namespace AirportEntities
             Console.WriteLine($"Flight number {flight.FlightNumber} asking permission to land now.");
             //land the plan...
             CommingFlights.Add(flight);
+            _scheduler.NewFlightArrived(flight);
         }
 
         public void FlightsAskToTakeoff(Flight flight)
@@ -33,7 +35,8 @@ namespace AirportEntities
             Console.WriteLine($"Flight number {flight.FlightNumber} asking permission to takeoff now.");
             //let the plan to takeoff...
 
-            CommingFlights.Add(flight);
+            TakesOffFlights.Add(flight);
+            _scheduler.NewFlightArrived(flight);
         }
 
         private Flight FindFlight(int flightNumber)

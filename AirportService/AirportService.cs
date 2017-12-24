@@ -50,16 +50,16 @@ namespace AirportService
             return new PlaneManager();
         }
 
-        public void FlightAskToLand(Flight flightNumber)
+        public void FlightAskToLand(Flight flight)
         {
             ControlTower tower = new ControlTower();
-            tower.FlightsAskToLand(flightNumber);
+            tower.FlightsAskToLand(flight);
         }
 
-        public void FlightAskToTakeoff(Flight flightNumber)
+        public void FlightAskToTakeoff(Flight flight)
         {
             ControlTower tower = new ControlTower();
-            tower.FlightsAskToTakeoff(flightNumber);
+            tower.FlightsAskToTakeoff(flight);
         }
     }
 }
