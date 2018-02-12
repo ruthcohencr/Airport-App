@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirportEntities
 {
-    interface IArea
+    public interface IArea
     {
         int AreaNumber { get; set; }
         int SpendingMinutes { get; set; }

@@ -11,6 +11,8 @@ namespace AirportEntities.IAreaLocations
         public int AreaNumber { get; set; }
         public int SpendingMinutes { get; set; }
         public int FlightNumber { get; set; }
+        public object LockArea;
+
 
         public List<Plane> CurrentPlanes;
 
@@ -18,7 +20,8 @@ namespace AirportEntities.IAreaLocations
         {
             CurrentPlanes = new List<Plane>();
             AreaNumber = areaNumber;
-            SpendingMinutes = 4;
+            SpendingMinutes = 3000;
+            LockArea = new object();
         }
 
         public void MoveOn()

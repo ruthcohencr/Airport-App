@@ -12,12 +12,14 @@ namespace AirportEntities.IAreaLocations
         public int SpendingMinutes { get; set; }
         public bool IsAvailable { get; set; }
         public int FlightNumber { get; set; }
+        public object LockArea;
 
         public CommonArea(int areaNumber)
         {
             AreaNumber = areaNumber;
-            SpendingMinutes = 5;
+            SpendingMinutes = 8000;
             IsAvailable = true;
+            LockArea = new object();
         }
 
         public void MoveOn()

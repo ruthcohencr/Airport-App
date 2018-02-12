@@ -9,21 +9,25 @@ namespace AirportEntities.FlowProcess
 {
     class LandingProcess : Process
     {
-        public override List<IArea> CreateProcessFlow()
+        public LandingProcess()
         {
-            IArea area1 = new LandingArea(1);
-            IArea area2 = new LandingArea(2);
-            IArea area3 = new LandingArea(3);
-            IArea area4 = new CommonArea(4);
-            IArea area5 = new LandingArea(5);
+            QueueOfAreas = GetProcessFlow();
+        }
+        internal override Queue<IArea> GetProcessFlow()
+        {
+            IArea area1 = GetInstance(AreaName.Area1);
+            IArea area2 = GetInstance(AreaName.Area2);
+            IArea area3 = GetInstance(AreaName.Area3);
+            IArea area4 = GetInstance(AreaName.Area4);
+            IArea area5 = GetInstance(AreaName.Area5);
 
-            ListOfAreas.Add(area1);
-            ListOfAreas.Add(area2);
-            ListOfAreas.Add(area3);
-            ListOfAreas.Add(area4);
-            ListOfAreas.Add(area5);
- 
-            return ListOfAreas;
+            QueueOfAreas.Enqueue(area1);
+            QueueOfAreas.Enqueue(area2);
+            QueueOfAreas.Enqueue(area3);
+            QueueOfAreas.Enqueue(area4);
+            QueueOfAreas.Enqueue(area5);
+
+            return QueueOfAreas;
         }
     }
 }

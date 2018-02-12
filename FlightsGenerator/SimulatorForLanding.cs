@@ -36,7 +36,7 @@ namespace FlightsGenerator
                 {
                     AirportService.Flight flight = new AirportService.Flight()
                     { Plane = plane, Flow = Flow.LandStatus, FlightNumber = flightNumber++ };
-                    int minutesToLand = generateMinutes.Next(1, 10) * DURATION;
+                    int minutesToLand = generateMinutes.Next(2, 10) * DURATION;
                     Timer timer = new Timer(minutesToLand);
                     timer.Start();
                     timer.Elapsed += (sender, e) => TimerElapsedFlightNeedsToLand(sender, e, flight);

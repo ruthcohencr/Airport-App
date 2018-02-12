@@ -12,6 +12,7 @@ namespace AirportEntities
     {
         private static int flightCounter = 700;
         private int _flightNumber;
+        public IArea CurrentArea { get; set; }
 
         [DataMember]
         public int FlightNumber
@@ -28,10 +29,13 @@ namespace AirportEntities
 
         private Object obj = new object();
 
+        public bool IsInProcess { get; set; }
+
         public Flight()
         {
             Plane = null;
             _flightNumber = ++flightCounter;
+            IsInProcess = true;
         }
 
         public Flight(Plane plane, Flow flow)
@@ -39,6 +43,7 @@ namespace AirportEntities
             //_flightNumber = ++flightCounter;
             Plane = plane;
             Flow = flow;
+            IsInProcess = true;
         }
     }
 }
